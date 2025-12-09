@@ -87,7 +87,7 @@ export default function Index() {
                         Nhập prompt, gửi lên backend. Backend sẽ gọi Gemini qua API và trả câu trả lời lại.
                     </Text>
 
-                    <Text style={styles.label}>Prompt gửi lên backend:</Text>
+                    <Text style={styles.label}>Prompt:</Text>
                     <TextInput
                         style={styles.input}
                         placeholder="Prompt của bạn ở đây"
