@@ -13,9 +13,11 @@ import {
     KeyboardAvoidingView,
 } from "react-native";
 
+import { API_URL } from "../config/env";
+
 // TẠM THỜI: URL giả, backend mình sẽ làm sau.
 // Khi chưa có backend, bấm nút sẽ báo lỗi network là bình thường.
-const BASE_URL = "http://192.168.53.102:8000";
+const BASE_URL = API_URL;
 
 function formatAnswer(raw: string): string {
     return raw
