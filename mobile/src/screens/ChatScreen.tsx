@@ -11,6 +11,8 @@ import {
     ScrollView,
     Platform,
     KeyboardAvoidingView,
+    NativeSyntheticEvent,
+    TextInputKeyPressEventData,
 } from "react-native";
 
 import { API_URL } from "../config/env";
@@ -44,6 +46,17 @@ export default function Index() {
     const [answer, setAnswer] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+
+    const handleWebEnterSubmit = (
+        event: NativeSyntheticEvent<TextInputKeyPressEventData>,
+    ) => {
+        if (Platform.OS !== "web") return;
+
+        if (event.nativeEvent.key === "Enter" && !event.nativeEvent.shiftKey) {
+            event.preventDefault?.();
+            handleSend();
+        }
+    };
 
     const handleSend = async () => {
         if (!prompt.trim()) return;
@@ -95,6 +108,7 @@ export default function Index() {
                         onChangeText={setPrompt}
                         multiline
                         placeholderTextColor="#AAAAAA"
+                        onKeyPress={handleWebEnterSubmit}
                     />
 
                     <TouchableOpacity style={styles.button} onPress={handleSend}>
