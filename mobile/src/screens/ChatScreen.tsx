@@ -84,7 +84,7 @@ export default function Index() {
                 <ScrollView contentContainerStyle={styles.scrollContent}>
                     <Text style={styles.title}>Chat DPT - based on Gemini 2.5-flash</Text>
                     <Text style={styles.subtitle}>
-                        Nhập prompt, gửi lên backend. Backend sẽ gọi Gemini qua API và trả câu trả lời lại.
+                        LLM
                     </Text>
 
                     <Text style={styles.label}>Prompt:</Text>
